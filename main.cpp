@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 using namespace std;
+
 void selectionSort(vector<int>& data);
 void bubbleSort(vector<int>& data);
 void swap(int* x, int* y);
@@ -8,6 +9,7 @@ int partition(vector<int>& arr, int low, int high);
 void quickSort(vector<int>& arr, int low, int high);
 void merge(vector<int>& arr, int left, int middle, int right);
 void mergeSort(vector<int>& arr, int left, int right);
+void insertionSort(vector<int>& arr,int size);
 int main() {
     cout << "enter the size : ";
     int size;cin >> size;
@@ -22,7 +24,8 @@ int main() {
 //    selectionSort(data);
 //    bubbleSort(data);
 //    quickSort(data, 0, size - 1);
-    mergeSort(data,0,size-1);
+//    mergeSort(data,0,size-1);
+    insertionSort(data, data.size());
     cout << "Sorted Data: ";
     for (int item : data) {
         cout << item << " ";
@@ -30,6 +33,7 @@ int main() {
     cout << endl;
     return 0;
 }
+
 
 void selectionSort(vector<int>& data) {
     for (int i = 0; i < data.size() - 1; ++i) {
@@ -129,5 +133,19 @@ void mergeSort(vector<int>& arr, int left, int right) {
 
         // Merge the sorted subarrays
         merge(arr, left, middle, right);
+    }
+}
+void insertionSort(vector<int>& data, int size) {
+    // Start from the second element (index 1)
+    for (int i = 1; i < size; i++) {
+        int key = data[i];
+        int j = i - 1;
+
+        // Shift elements of data[0..i-1], that are greater than key, to one position ahead
+        // of their current position
+        while (j >= 0 && data[j] > key) {
+            swap(data[j + 1], data[j]);  // Swap elements using the existing swap function
+            j--;
+        }
     }
 }
