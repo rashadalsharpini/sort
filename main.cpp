@@ -9,7 +9,7 @@ int partition(vector<int>& arr, int low, int high);
 void quickSort(vector<int>& arr, int low, int high);
 void merge(vector<int>& arr, int left, int middle, int right);
 void mergeSort(vector<int>& arr, int left, int right);
-void insertionSort(vector<int>& arr,int size);
+void insertionSort(vector<int>& data,int size);
 int main() {
     cout << "enter the size : ";
     int size;cin >> size;
@@ -25,7 +25,7 @@ int main() {
 //    bubbleSort(data);
 //    quickSort(data, 0, size - 1);
 //    mergeSort(data,0,size-1);
-    insertionSort(data, data.size());
+//    insertionSort(data, data.size());
     cout << "Sorted Data: ";
     for (int item : data) {
         cout << item << " ";
