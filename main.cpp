@@ -10,6 +10,7 @@ void quickSort(vector<int>& arr, int low, int high);
 void merge(vector<int>& arr, int left, int middle, int right);
 void mergeSort(vector<int>& arr, int left, int right);
 void insertionSort(vector<int>& data,int size);
+void countSort(vector<int>& data, int size);
 int main() {
     cout << "enter the size : ";
     int size;cin >> size;
@@ -26,6 +27,7 @@ int main() {
 //    quickSort(data, 0, size - 1);
 //    mergeSort(data,0,size-1);
 //    insertionSort(data, data.size());
+    countSort(data, data.size());
     cout << "Sorted Data: ";
     for (int item : data) {
         cout << item << " ";
@@ -147,5 +149,38 @@ void insertionSort(vector<int>& data, int size) {
             swap(data[j + 1], data[j]);  // Swap elements using the existing swap function
             j--;
         }
+    }
+}
+void countSort(vector<int>& data, int size) {
+    int max = data[0];  // Find the maximum element
+    for (int i = 1; i < size; i++) {
+        if (data[i] > max) {
+            max = data[i];
+        }
+    }
+
+    int count[max + 1] = {0};  // Create a count array of size max+1
+
+    // Store the count of each element in count array
+    for (int i = 0; i < size; i++) {
+        count[data[i]]++;
+    }
+
+    // Modify count array such that each element now contains actual position of the element in output array
+    for (int i = 1; i <= max; i++) {
+        count[i] += count[i - 1];
+    }
+
+    int output[size];  // Create an output array
+
+    // Place the elements in sorted order in output array
+    for (int i = size - 1; i >= 0; i--) {
+        output[count[data[i]] - 1] = data[i];
+        count[data[i]]--;
+    }
+
+    // Copy the output array to data, so that data now contains sorted elements
+    for (int i = 0; i < size; i++) {
+        data[i] = output[i];
     }
 }
