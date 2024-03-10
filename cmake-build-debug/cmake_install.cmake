@@ -1,4 +1,4 @@
-# Install script for directory: /home/rashadalsharpini/Desktop/Clion/sort
+# Install script for directory: /home/rashad/Desktop/clion/sort
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/rashadalsharpini/Desktop/Clion/sort/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/rashad/Desktop/clion/sort/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

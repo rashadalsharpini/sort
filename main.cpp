@@ -24,10 +24,10 @@ int main() {
     cout << endl;
 //    selectionSort(data);
 //    bubbleSort(data);
-//    quickSort(data, 0, size - 1);
+    quickSort(data, 0, size - 1);
 //    mergeSort(data,0,size-1);
 //    insertionSort(data, data.size());
-    countSort(data, data.size());
+//    countSort(data, data.size());
     cout << "Sorted Data: ";
     for (int item : data) {
         cout << item << " ";

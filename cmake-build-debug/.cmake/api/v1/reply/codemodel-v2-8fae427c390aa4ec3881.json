@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/home/rashadalsharpini/Desktop/Clion/sort/cmake-build-debug",
-		"source" : "/home/rashadalsharpini/Desktop/Clion/sort"
+		"build" : "/home/rashad/Desktop/clion/sort/cmake-build-debug",
+		"source" : "/home/rashad/Desktop/clion/sort"
 	},
 	"version" : 
 	{
