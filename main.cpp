@@ -9,8 +9,8 @@ int partition(vector<int>& arr, int low, int high);
 void quickSort(vector<int>& arr, int low, int high);
 void merge(vector<int>& arr, int left, int middle, int right);
 void mergeSort(vector<int>& arr, int left, int right);
-void insertionSort(vector<int>& data,int size);
-void countSort(vector<int>& data, int size);
+void insertionSort(vector<int>& data);
+void countSort(vector<int>& data);
 int main() {
     cout << "enter the size : ";
     int size;cin >> size;
@@ -137,7 +137,8 @@ void mergeSort(vector<int>& arr, int left, int right) {
         merge(arr, left, middle, right);
     }
 }
-void insertionSort(vector<int>& data, int size) {
+void insertionSort(vector<int>& data) {
+    int size = data.size();
     // Start from the second element (index 1)
     for (int i = 1; i < size; i++) {
         int key = data[i];
@@ -151,7 +152,8 @@ void insertionSort(vector<int>& data, int size) {
         }
     }
 }
-void countSort(vector<int>& data, int size) {
+void countSort(vector<int>& data) {
+    int size = data.size();
     int max = data[0];  // Find the maximum element
     for (int i = 1; i < size; i++) {
         if (data[i] > max) {
