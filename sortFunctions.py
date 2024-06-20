@@ -1,7 +1,3 @@
-# int partition(vector<int>& arr, int low, int high);
-# void quickSort(vector<int>& arr, int low, int high);
-# void merge(vector<int>& arr, int left, int middle, int right);
-# void mergeSort(vector<int>& arr, int left, int right);
 def bubbleSort(data):
     for i in data:
         for j in range(len(data) - i - 1):
